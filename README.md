@@ -1,3 +1,25 @@
+# README
+![Uploading furima-top.jpg…]()
+
+# このアプリについて
+- フリマサイトのクローン
+- TECH::CAMP 80期短期集中メンバー4名にて作成
+- 制作期間 2020/8/4 ~ 2020/8/25 (21日間)
+- 使用Gemや機能、各担当箇所は以下に記載
+
+# 制作メンバー
+## hiromimatsu
+
+### 実装内容
+<img src=![Uploading 13DE1D4E-79EA-49D6-A3C0-E2C4500B5AB5_1_201_a.jpeg…](), width="70px", height="70px">
+
+- DB設計
+- 商品一覧ページ
+- カテゴリー機能
+- ユーザー新規登録、ログイン
+- 商品編集ページ
+- 商品詳細ページ
+- 商品購入確認ページ
 
 ## usersテーブル
 |Column|Type|Options|
