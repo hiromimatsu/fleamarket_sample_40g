@@ -35,7 +35,7 @@
 - 商品編集機能（カテゴリー除く）
 
 ## tottiman
-![](https://files.slack.com/files-tmb/TBRRYLL4Q-F0197SE3A8P-f497300913/toshiki-no-pic________________720.jpg)
+<img src="https://files.slack.com/files-tmb/TBRRYLL4Q-F0197SE3A8P-f497300913/toshiki-no-pic________________720.jpg" width=20%>
 
 ### 実装内容
 - DB設計
