@@ -1,6 +1,6 @@
 # README
 
-![Uploading furima-top.jpg…]()
+![furima-top](https://user-images.githubusercontent.com/67910543/91539600-8bc9bc00-e954-11ea-8d25-cf040901d288.jpg)
 
 # このアプリについて
 - フリマサイトのクローン
@@ -10,40 +10,101 @@
 
 # 制作メンバー
 ## hiromimatsu
+<img src= "https://user-images.githubusercontent.com/67910543/91537482-566f9f00-e951-11ea-966d-0531f62b768a.jpeg" width= "80">
+
 ### 実装内容
 
 - DB設計
-フロントエンド
+#### フロントエンド
 - 商品詳細ページ
 - 商品購入ページ
 - 商品一覧ページ
-バッグエンド
+#### バックエンド
 - カテゴリー機能 （gem 'ancestry'）
 - ユーザー新規登録、ログイン（ウィザード形式）
 - 商品編集ページ （画像除く）
 - 商品一覧ページ
+- テストコード実装(ユーザー)
 
 ## ympon
+<img src="https://user-images.githubusercontent.com/67910543/91537080-b154c680-e950-11ea-98f8-364967c48a17.jpg" width= "80">
+
 ### 実装内容
-フロントエンド
+#### フロントエンド
 - トップページ
-バックエンド
+#### バックエンド
 - 商品出品時の複数画像投稿機能
 - 商品詳細機能
 - 商品編集機能（カテゴリー除く）
 
+
 ## tottiman
+<img src="https://user-images.githubusercontent.com/67910543/91537072-aef26c80-e950-11ea-84c4-a1546c277032.jpg" width= "80">
+
 ### 実装内容
 - DB設計
-フロントエンド
+#### フロントエンド
 - 新規登録/ログインページ
 - マイページ
-バックエンド
+#### バックエンド
 - クレジットカード決済機能
 
 ## shuheishuhei
+<img src="https://user-images.githubusercontent.com/67910543/91542185-68087500-e958-11ea-8bc2-9e9f2682e2ce.jpeg" width= "80" height= "80">
 
 ### 実装内容
+- デプロイ担当AWS EC2〜S3導入
+- Nginx,Unicorn,Capistrano導入
+- Basic認証
+#### フロントエンド
+- 商品出品ページ
+#### バックエンド
+- 商品出品機能(複数枚画像除く)
+- 商品削除機能
+- テストコード実装(商品出品)
+
+### Gem一覧
+- gem 'rails', '~> 6.0.0'
+- gem 'mysql2', '>= 0.4.4'
+- gem 'puma', '~> 3.11'
+- gem 'sass-rails', '~> 5'
+- gem 'webpacker', '~> 4.0'
+- gem 'turbolinks', '~> 5'
+- gem 'jbuilder', '~> 2.7'
+- gem 'redis', '~> 4.0'
+- gem 'bcrypt', '~> 3.1.7'
+- gem 'image_processing', '~> 1.2'
+- gem 'bootsnap', '>= 1.4.2', require: false 
+- gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+- gem 'pry-rails'
+- gem 'rspec-rails'
+- gem 'capistrano'
+- gem 'capistrano-rbenv'
+- gem 'capistrano-bundler'
+- gem 'capistrano-rails'
+- gem 'capistrano3-unicorn'
+- gem 'capistrano-rails-console'
+- gem 'factory_bot_rails'
+- gem 'web-console', '>= 3.3.0'
+- gem 'listen', '>= 3.0.5', '< 3.2'
+- gem 'spring'
+- gem 'spring-watcher-listen', '~> 2.0.0'
+- gem 'capybara', '>= 2.15'
+- gem 'selenium-webdriver'
+- gem 'webdrivers'
+- gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+- gem 'unicorn'
+- gem 'active_hash'
+- gem 'devise'
+- gem 'carrierwave'
+- gem 'mini_magick'
+- gem 'ancestry'
+- gem 'jquery-rails'
+- gem 'payjp'
+- gem 'haml-rails'
+- gem 'fog-aws' 
+- gem 'font-awesome-sass'
+
 
 # サイトURL (Basic認証キー)
 - ユーザー名: shuhei
