@@ -10,7 +10,6 @@
 
 # 制作メンバー
 ## hiromimatsu
-
 ### 実装内容
 
 - DB設計
@@ -25,8 +24,6 @@
 - 商品一覧ページ
 
 ## ympon
-<img src="https://files.slack.com/files-pri/TBRRYLL4Q-F019NK2SNHG/ios__________.jpg" width=10%>
-
 ### 実装内容
 フロントエンド
 - トップページ
@@ -36,8 +33,6 @@
 - 商品編集機能（カテゴリー除く）
 
 ## tottiman
-<img src="https://files.slack.com/files-tmb/TBRRYLL4Q-F0197SE3A8P-f497300913/toshiki-no-pic________________720.jpg" width=10%>
-
 ### 実装内容
 - DB設計
 フロントエンド
