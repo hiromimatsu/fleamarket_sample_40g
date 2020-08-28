@@ -1,31 +1,77 @@
 # README
+
 ![Uploading furima-top.jpg…]()
 
 # このアプリについて
 - フリマサイトのクローン
 - TECH::CAMP 80期短期集中メンバー4名にて作成
 - 制作期間 2020/8/4 ~ 2020/8/25 (21日間)
-- 使用Gemや機能、各担当箇所は以下に記載
+- 機能、各担当箇所は以下に記載
 
 # 制作メンバー
 ## hiromimatsu
 
 ### 実装内容
-<img src=![Uploading 13DE1D4E-79EA-49D6-A3C0-E2C4500B5AB5_1_201_a.jpeg…](), width="70px", height="70px">
 
 - DB設計
-- 商品一覧ページ
-- カテゴリー機能
-- ユーザー新規登録、ログイン
-- 商品編集ページ
+フロントエンド
 - 商品詳細ページ
-- 商品購入確認ページ
+- 商品購入ページ
+- 商品一覧ページ
+バッグエンド
+- カテゴリー機能 （gem 'ancestry'）
+- ユーザー新規登録、ログイン（ウィザード形式）
+- 商品編集ページ （画像除く）
+- 商品一覧ページ
 
+## ympon
+
+### 実装内容
+フロントエンド
+- トップページ
+バックエンド
+- 商品出品時の複数画像投稿機能
+- 商品詳細機能
+- 商品編集機能（カテゴリー除く）
+
+## tottiman
+
+### 実装内容
+- DB設計
+フロントエンド
+- 新規登録/ログインページ
+- マイページ
+バックエンド
+- クレジットカード決済機能
+
+## shuheishuhei
+
+### 実装内容
+
+# サイトURL (Basic認証キー)
+- ユーザー名: shuhei
+- パスワード: shuhei0331
+
+# テスト用アカウント等
+## 購入者用
+- メールアドレス: buyer_user@gmail.com
+- パスワード: buyer_user
+## 購入用カード情報
+- 番号：4242424242424242
+- 期限：08/25
+- セキュリティコード：456
+## 出品者用
+- メールアドレス名: seller_user@gmail.com
+- パスワード: seller_user
+
+
+# DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|email|string|null: false, unique:true|
+|nickname|string|null: false,uniqueness: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
 ### Association
 - has_many :items
 - has_one :profile
@@ -56,18 +102,16 @@
 |city|string|null: false|
 |house_number|integer|null: false|
 |building_name|string||
-|phone_number|string||
+|phone_number|string|unique: true|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
-## creditsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|credit_number|integer|null: false, unique: true|
-|expiration_year|integer|null: false|
-|expiration_month|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
@@ -78,24 +122,25 @@
 |name|string|null: false|
 |introduction|text|null: false|
 |price|integer|null: false|
-|brand_id|references|null: false, foreign_key: true|
+|brand|string||
 |category_id|references|null: false, foreign_key: true|
-|size_id|references|foreign_key: true|
-|item_conditions_id|references|foreign_key: true|
-|postage_pay_id|references|null: false, foreign_key: true|
-|preparation_day_id|references|null: false,foreign_key: true|
-|prefecture|integer||
-|buyer_id|references|null: false, foreign_key: true|
-|seller_id|references|null: false, foreign_key: true|
+|condition_id|references|null: false|
+|prefecture_id|integer|null: false|
+|day_id|integer|null: false|
+|postage_id|references|null: false|
+|way_id|integer|null: false|
+|status_id|integer|null: false|
 ### Association
 - has_many: item_images
 - belongs_to: user
 - belongs_to: category
 - belongs_to: brand
-- belongs_to_active_hash: size
-- belongs_to_active_hash: item_condition
-- belongs_to_active_hash: preparation_day
-- belongs_to_active_hash: postage_payer
+- belongs_to_active_hash: prefecture
+- belongs_to_active_hash: condition
+- belongs_to_active_hash: postage
+- belongs_to_active_hash: day
+- belongs_to_active_hash: way
+- belongs_to_active_hash: status
 
 ## item_imagesテーブル
 |Column|Type|Options|
@@ -111,11 +156,5 @@
 |name|string|null: false|
 |ancestry|string|null: false|
 ### Association
-- has_many: items
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### Association
+- has_ancestry
 - has_many: items
